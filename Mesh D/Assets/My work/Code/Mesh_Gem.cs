@@ -48,18 +48,21 @@ public class Mesh_Gem : MonoBehaviour
 
                 if (distance.sqrMagnitude < radius)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetKey(KeyCode.UpArrow))
                     {
+                        Debug.Log("Left click");
                         modifiedVerts[v] = modifiedVerts[v] + (Vector3.up * force) / smoothingFactor;
                     }
-                    else if (Input.GetMouseButtonDown(1))
+                    else if (Input.GetKey(KeyCode.DownArrow))
                     {
+                        Debug.Log("Right click");
                         modifiedVerts[v] = modifiedVerts[v] + (Vector3.down * force) / smoothingFactor;
                     }
                 }
             }
         }
-
         RecalculateMesh();
     }
+
 }
+
